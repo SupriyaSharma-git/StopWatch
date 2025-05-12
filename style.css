@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("bgimg.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.timer-display {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    color: aliceblue;
+    font-size: 2rem;
+    font-weight: bolder;
+    border-radius: 20px 10px 0 0;
+}
+
+.laps {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.action {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping */
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.action div {
+    flex: 1 1 calc(33.33% - 20px); /* Each button takes about one-third of the width */
+    padding: 8px 16px;
+    background-color: azure;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+/* Ensures buttons remain responsive */
+@media (max-width: 600px) {
+    .action div {
+        flex: 1 1 calc(50% - 15px); /* Switches to two buttons per row for smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .action div {
+        flex: 1 1 100%; /* Single button per row for very small screens */
+    }
+}
+
+
+.action div:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
